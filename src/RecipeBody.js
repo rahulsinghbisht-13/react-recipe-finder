@@ -11,17 +11,12 @@ class RecipeBody extends Component {
   }
 
   componentDidMount() {
-    console.log(
-      "https://www.themealdb.com/api/json/v1/1/search.php?s=" +
-        this.props.foodItem
-    );
     if (this.props.foodItem === "") alert("Enter a Dish!!");
     else {
       Axios.get(
         "https://www.themealdb.com/api/json/v1/1/search.php?s=" +
           this.props.foodItem
       ).then((resolve) => {
-        console.log(resolve.data.meals);
         this.setState({
           meal: resolve.data.meals,
         });
@@ -37,7 +32,6 @@ class RecipeBody extends Component {
           "https://www.themealdb.com/api/json/v1/1/search.php?s=" +
             this.props.foodItem
         ).then((resolve) => {
-          console.log(resolve.data.meals);
           this.setState({
             meal: resolve.data.meals,
           });
@@ -60,7 +54,6 @@ class RecipeBody extends Component {
         );
         i++;
       }
-      console.log(list);
     }
 
     const id =
@@ -74,16 +67,18 @@ class RecipeBody extends Component {
               src={meal[0].strMealThumb}
               alt={"Your meal for " + meal[0].strMeal}
             />
-            <div class="textData">
+            <div className="textData">
               <p>
                 <em>Category of Meal:</em> {meal[0].strCategory}{" "}
               </p>
               <p>
                 <em>Area of the Meal:</em> {meal[0].strArea}{" "}
               </p>
+              <br />
               <h3>Ingredients:</h3>
               <ul className="ingredients">{list}</ul>
-              <h3>Recipes</h3>
+              <br />
+              <h3 className="recipes_title">Recipes</h3>
               <div className="recipe">{meal[0].strInstructions}</div>
             </div>
           </div>

@@ -6,8 +6,8 @@
 }
 
 .title {
-  background-color: #222;
-  color: #eee;
+  background-color: rgb(247, 244, 202);
+  color: rgb(199, 136, 199);
   text-align: center;
   padding: 10px;
   margin: 5px 0;
@@ -24,18 +24,27 @@
   height: 200px;
   overflow: auto;
   padding: 5px 30px;
-  background-color: #ffdd66;
+  background-color: rgb(219, 219, 219);
   margin: 2px 1px 10px;
   list-style-type: none;
 }
 
 .recipe {
   height: 200px;
-  background-color: #ffdd66;
+  background-color: rgb(219, 219, 219);
   padding: 10px 20px;
   overflow: auto;
 }
 
 .noData {
   text-align: center;
+}
+
+.recipe_title {
+  margin-left: 400px;
+}
+
+.recipeContainer {
+  background-color: rgb(253, 226, 253);
+  height: 110vh;
 }

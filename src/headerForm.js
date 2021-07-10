@@ -26,7 +26,7 @@ class HeaderForm extends Component {
     return (
       <div>
         <div className="header-container">
-          <h1 className="heading">Meal Recipe Finder</h1>
+          <h1 className="heading">Recipe Finder</h1>
           <form className="input-form">
             <input
               type="text"
@@ -35,7 +35,7 @@ class HeaderForm extends Component {
             />
             <input
               type="submit"
-              value="Get Ingredients"
+              value="Get Recipes"
               onClick={this.getRecipe}
             />
           </form>
@@ -44,7 +44,7 @@ class HeaderForm extends Component {
           <RecipeBody foodItem={this.state.foodItem} />
         ) : (
           <h2 className="center">
-            Type a Dish Name to search for its ingredients
+            Type a Dish Name to Search for it's ingredients
           </h2>
         )}
       </div>
