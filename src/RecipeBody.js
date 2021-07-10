@@ -50,6 +50,7 @@ class RecipeBody extends Component {
         list.push(
           <li key={i}>
             {meal[0]["strIngredient" + i] + "----" + meal[0]["strMeasure" + i]}
+            <br /><br />
           </li>
         );
         i++;
@@ -69,10 +70,10 @@ class RecipeBody extends Component {
             />
             <div className="textData">
               <p>
-                <em>Category of Meal:</em> {meal[0].strCategory}{" "}
+                <em>Category of Meal - </em> {meal[0].strCategory}{" "}
               </p>
               <p>
-                <em>Area of the Meal:</em> {meal[0].strArea}{" "}
+                <em>Area of the Meal - </em> {meal[0].strArea}{" "}
               </p>
               <br />
               <h3>Ingredients:</h3>

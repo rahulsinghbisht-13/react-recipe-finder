@@ -7,7 +7,7 @@
 
 .title {
   background-color: rgb(247, 244, 202);
-  color: rgb(199, 136, 199);
+  color: rgb(139, 110, 139);
   text-align: center;
   padding: 10px;
   margin: 5px 0;
@@ -15,9 +15,10 @@
 
 .recipeData img {
   height: 350px;
-  width: 350px;
-  border: 2px solid black;
-  margin: auto 50px;
+  width: 30%;
+  border: 3.5px solid black;
+  margin: 5%;
+  margin-top: 10px;
 }
 
 .ingredients {
@@ -30,6 +31,7 @@
 }
 
 .recipe {
+  width: 100%;
   height: 200px;
   background-color: rgb(219, 219, 219);
   padding: 10px 20px;
@@ -38,6 +40,7 @@
 
 .noData {
   text-align: center;
+  font-weight: bold;
 }
 
 .recipe_title {

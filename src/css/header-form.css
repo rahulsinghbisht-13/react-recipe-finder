@@ -28,6 +28,8 @@
   width: 300px;
   font-size: 1.2rem;
   top: 3px;
+  height: 50px;
+  text-align: center;
 }
 
 .input-form input[type="text"]:focus {
