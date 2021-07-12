@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Axios from "axios";
 import "./css/recipe-body.css";
+import { faHeart } from "@fortawesome/free-regular-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class RecipeBody extends Component {
   constructor(props) {
@@ -15,7 +17,7 @@ class RecipeBody extends Component {
     else {
       Axios.get(
         "https://www.themealdb.com/api/json/v1/1/search.php?s=" +
-          this.props.foodItem
+        this.props.foodItem
       ).then((resolve) => {
         this.setState({
           meal: resolve.data.meals,
@@ -30,7 +32,7 @@ class RecipeBody extends Component {
       else {
         Axios.get(
           "https://www.themealdb.com/api/json/v1/1/search.php?s=" +
-            this.props.foodItem
+          this.props.foodItem
         ).then((resolve) => {
           this.setState({
             meal: resolve.data.meals,
@@ -39,6 +41,12 @@ class RecipeBody extends Component {
       }
     }
   }
+
+  toggle = () => {
+    let localLiked = this.state.liked;
+    localLiked = !localLiked;
+    this.setState({ liked: localLiked });
+  };
 
   render() {
     const { meal } = this.state;
@@ -61,7 +69,16 @@ class RecipeBody extends Component {
       meal !== null && meal.length > 0 ? (
         <div className="recipeContainer">
           <div className="title">
-            <h1>{meal[0].strMeal}</h1>
+            <h1>{meal[0].strMeal}  <span
+              className="heart_icon"
+              onClick={() => this.toggle()}
+            >
+              {this.state.liked === false ? (
+                <FontAwesomeIcon icon={faHeart} style={{ color: 'red' }} />
+              ) : (
+                <FontAwesomeIcon icon={faHeart} />
+              )}
+            </span></h1>
           </div>
           <div className="recipeData">
             <img
