@@ -12,6 +12,8 @@ class RecipeBody extends Component {
     };
   }
 
+  // code to search the recipe from the MealDB api
+
   componentDidMount() {
     if (this.props.foodItem === "") alert("Enter a Dish!!");
     else {
@@ -41,6 +43,8 @@ class RecipeBody extends Component {
       }
     }
   }
+
+  // toggle function for favourite icon
 
   toggle = () => {
     let localLiked = this.state.liked;
@@ -80,6 +84,7 @@ class RecipeBody extends Component {
               )}
             </span></h1>
           </div>
+          {/* code to display all the details of a recipe */}
           <div className="recipeData">
             <img
               src={meal[0].strMealThumb}
@@ -102,6 +107,7 @@ class RecipeBody extends Component {
           </div>
         </div>
       ) : (
+        // error handling(if entered data doesn't match with the api's data)
         <div className="noData">No Data has been recieved</div>
       );
     return <div>{id}</div>;

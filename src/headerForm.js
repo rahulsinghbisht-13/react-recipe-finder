@@ -11,6 +11,8 @@ class HeaderForm extends Component {
     };
   }
 
+  // code to search for the required recipe entered by the user.
+
   getRecipe = (e) => {
     e.preventDefault();
 
@@ -26,6 +28,7 @@ class HeaderForm extends Component {
     return (
       <div>
         <div className="header-container">
+          {/* Title of the page */}
           <h1 className="heading">Recipe Finder</h1>
           <form className="input-form">
             <input
